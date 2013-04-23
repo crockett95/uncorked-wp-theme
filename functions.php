@@ -59,11 +59,14 @@ function uncorked_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	add_image_size( 'carousel-thumb', 1600, 720, true );
+
 	/**
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'uncorked' ),
+		'footer' => __( 'Footer Menu', 'uncorked_merlot' ),
 	) );
 
 	/**
@@ -112,6 +115,62 @@ function uncorked_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'uncorked' ),
 		'id'            => 'sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s well">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Front Page 1', 'uncorked_merlot' ),
+		'id'            => 'front1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Front Page 2', 'uncorked_merlot' ),
+		'id'            => 'front2',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Front Page 3', 'uncorked_merlot' ),
+		'id'            => 'front3',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 1', 'uncorked_merlot' ),
+		'id'            => 'foot1',
+		'before_widget' => '<aside id="%1$s" class="widget well-small %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 2', 'uncorked_merlot' ),
+		'id'            => 'foot2',
+		'before_widget' => '<aside id="%1$s" class="widget well-small %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 3', 'uncorked_merlot' ),
+		'id'            => 'foot3',
+		'before_widget' => '<aside id="%1$s" class="widget well-small %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 4', 'uncorked_merlot' ),
+		'id'            => 'foot4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -140,6 +199,15 @@ function uncorked_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'uncorked_scripts' );
 
+
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+
+function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    return $html;
+}
+	
+		
 /**
  * Implement the Custom Header feature
  */
