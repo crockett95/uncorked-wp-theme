@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Uncorked-Merlot
+ * @package Uncorked
  */
 
 get_header(); ?>
@@ -37,7 +37,7 @@ while ( have_posts() ) : the_post();
                     if ( has_post_thumbnail() ) { the_post_thumbnail( 'carousel-thumb' ); } else { echo '<img src="' . get_template_directory_uri() . '/img/filler.png" alt="Jay Denton Logo" />';}
                     echo '<a href="';
                     the_permalink();
-                    echo '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'uncorked_merlot' ), the_title_attribute( 'echo=0' ) ) ); 
+                    echo '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'uncorked' ), the_title_attribute( 'echo=0' ) ) ); 
                     echo '" rel="bookmark"><div class="carousel-caption">';
                     echo '<h2>';
                     the_title();

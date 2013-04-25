@@ -4,7 +4,8 @@
  *
  * @package Uncorked
  */
-
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -66,7 +67,7 @@ function uncorked_setup() {
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'uncorked' ),
-		'footer' => __( 'Footer Menu', 'uncorked_merlot' ),
+		'footer' => __( 'Footer Menu', 'uncorked' ),
 	) );
 
 	/**
@@ -121,7 +122,7 @@ function uncorked_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Front Page 1', 'uncorked_merlot' ),
+		'name'          => __( 'Front Page 1', 'uncorked' ),
 		'id'            => 'front1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -129,7 +130,7 @@ function uncorked_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Front Page 2', 'uncorked_merlot' ),
+		'name'          => __( 'Front Page 2', 'uncorked' ),
 		'id'            => 'front2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -137,7 +138,7 @@ function uncorked_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Front Page 3', 'uncorked_merlot' ),
+		'name'          => __( 'Front Page 3', 'uncorked' ),
 		'id'            => 'front3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -145,7 +146,7 @@ function uncorked_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'uncorked_merlot' ),
+		'name'          => __( 'Footer 1', 'uncorked' ),
 		'id'            => 'foot1',
 		'before_widget' => '<aside id="%1$s" class="widget well-small %2$s">',
 		'after_widget'  => '</aside>',
@@ -153,7 +154,7 @@ function uncorked_widgets_init() {
 		'after_title'   => '</h5>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'uncorked_merlot' ),
+		'name'          => __( 'Footer 2', 'uncorked' ),
 		'id'            => 'foot2',
 		'before_widget' => '<aside id="%1$s" class="widget well-small %2$s">',
 		'after_widget'  => '</aside>',
@@ -161,7 +162,7 @@ function uncorked_widgets_init() {
 		'after_title'   => '</h5>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer 3', 'uncorked_merlot' ),
+		'name'          => __( 'Footer 3', 'uncorked' ),
 		'id'            => 'foot3',
 		'before_widget' => '<aside id="%1$s" class="widget well-small %2$s">',
 		'after_widget'  => '</aside>',
@@ -169,7 +170,7 @@ function uncorked_widgets_init() {
 		'after_title'   => '</h5>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer 4', 'uncorked_merlot' ),
+		'name'          => __( 'Footer 4', 'uncorked' ),
 		'id'            => 'foot4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
