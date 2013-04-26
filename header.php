@@ -8,28 +8,33 @@
  */
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<?php tha_html_before(); ?>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 	<head>
+		<?php tha_head_top(); ?>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width" />
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<title><?php is_front_page() ? bloginfo('description') : wp_title(''); ?><?php _e( ' | ', 'uncorked' ); ?><?php bloginfo( 'name' ); ?></title>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<!--[if lt IE 9]>
 			<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 		<![endif]-->
-
-		<?php wp_head(); ?>
+		<?php tha_head_bottom(); wp_head(); ?>
 	</head>
 
 	<body <?php body_class(); ?>>
-		<nav>
-			<?php get_template_part( 'partials/navbar' , 'fixedtop' ); ?>
-		</nav>
+	<?php tha_body_top(); ?>
 		<div id="page" class="hfeed site">
-			<?php do_action( 'before' ); if (is_front_page()){ ?>
-				<div class="hidden">
-					<?php } get_template_part('partials/header' , 'masthead' ); if (is_front_page()){ ?>
-				</div>
-			<?php  } ?>
+			<?php
+				get_template_part( 'part/navbar' , 'fixedtop' );
+				tha_header_before(); 
+				do_action( 'before' ); 
+				if ( !is_front_page() ) { get_template_part( 'part/header' , 'masthead' ); }
+				tha_header_after(); 
+			?>
 			<div id="main" class="site-main container-fluid">

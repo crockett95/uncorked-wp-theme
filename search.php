@@ -7,32 +7,28 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-		<?php if ( have_posts() ) : ?>
-
+<div id="primary" class="content-area row-fluid">
+	<section id="content" class="site-content offset1 span8" role="main">
+		<?php 
+			if ( have_posts() ) : 
+			?>
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'uncorked' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
+			<?php /* Start the Loop */ 
+				while ( have_posts() ) : the_post(); 
+					get_template_part( 'part/content', 'search' ); 
+				endwhile;
+				uncorked_content_nav( 'nav-below' ); 
+			else : 
+				get_template_part( 'no-results', 'search' ); 
+			endif; 
+		?>		
+	</section><!-- #content -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+	<section class="span3 hidden-phone">
+		<?php get_sidebar(); ?>
+	</section>
+</div><!-- #primary -->
 
-				<?php get_template_part( 'content', 'search' ); ?>
-
-			<?php endwhile; ?>
-
-			<?php uncorked_content_nav( 'nav-below' ); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'no-results', 'search' ); ?>
-
-		<?php endif; ?>
-
-		</div><!-- #content -->
-	</section><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

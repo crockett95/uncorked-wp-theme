@@ -56,3 +56,5 @@
 		<?php edit_post_link( __( 'Edit', 'uncorked' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
+
+
