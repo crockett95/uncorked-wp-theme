@@ -15,16 +15,11 @@ get_header(); ?>
 		</section><!-- #uncorkedCarousel -->
 		<?php get_sidebar( 'front' ); ?>
 		<div id="postRow" class="row-fluid">
+			<?php tha_content_before(); ?>
 			<section id="postContent" class="site-content span10 offset1" role="main">
-				<?php // The Loop
-					if ( have_posts() ) : 
-						while ( have_posts() ) : the_post(); 
-							get_template_part( 'part/content', get_post_format() );
-						endwhile; 
-						uncorked_content_nav( 'nav-below' );
-					endif; 
-				?>
+				<?php get_template_part( 'part/loop' )?>
 			</section><!-- #postContent -->
+			<?php tha_content_after(); ?>
 		</div><!-- #postRow -->
 	</div><!-- #primary -->
 

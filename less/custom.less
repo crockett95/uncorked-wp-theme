@@ -101,9 +101,11 @@ a img.aligncenter {
 }
 
 footer.site-footer {
-	background-color: darken(@navbarInverseBackground, 10%);
-	padding-bottom: 0; 
+	background-color: @navbarInverseBackground;
+	padding-bottom: 20px; 
 	margin-bottom: 0;
+	margin-top: 40px;
+	color: @navbarInverseText;
 }
 
 .screen-reader-text {
@@ -141,4 +143,17 @@ select  {
 		position: fixed;
 		top: 28px;
 	}
+}
+footer .menu	{
+	text-align: center;
+	list-style-type: none;
+	ul li	{
+		display: inline-block;
+		padding: 3.0rem 1.0rem 0 1.0rem;
+		font-size: 1.8rem;
+	}
+}
+
+.attachment-carousel-thumb {
+	width: 100%;
 }

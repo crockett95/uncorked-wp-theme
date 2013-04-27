@@ -9,6 +9,7 @@
 ?>
 
 <article id="post-0" class="post no-results not-found">
+	<?php tha_entry_top(); ?>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php _e( 'Nothing Found', 'uncorked' ); ?></h1>
 	</header><!-- .entry-header -->
@@ -30,4 +31,5 @@
 
 		<?php endif; ?>
 	</div><!-- .entry-content -->
+	<?php tha_entry_bottom(); ?>
 </article><!-- #post-0 .post .no-results .not-found -->

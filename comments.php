@@ -39,6 +39,8 @@
 		return;
 ?>
 
+<aside class="row-fluid">
+<?php tha_comments_before(); ?>
 <div id="comments" class="comments-area well well-small span11">
 
 	<?php // You can start editing here -- including this comment! ?>
@@ -91,3 +93,5 @@
 	<?php comment_form( $commentArgs ); ?>
 
 </div><!-- #comments -->
+<?php tha_comments_after(); ?>
+</aside>

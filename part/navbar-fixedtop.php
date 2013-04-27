@@ -18,8 +18,8 @@
 				<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'uncorked' ); ?>">
 				<?php _e( 'Skip to content', 'uncorked' ); ?></a>
 			</div>
-			<div class="nav-collapse collapse">
-				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'items_wrap' => '<ul id="%1$s" class="nav %2$s">%3$s</ul>') ); ?>
+			<div class="nav-collapse">
+				<?php wp_nav_menu( array('theme_location' => 'primary', 'menu_class' => 'nav', 'depth' => 1, 'fallback_cb' => false, 'container' => false, 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>') ); ?>
 			</div>
 		</div><!-- .container-fluid -->
 	</div><!-- .navbar-inner -->

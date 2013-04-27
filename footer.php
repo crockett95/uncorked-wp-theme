@@ -7,21 +7,26 @@
  * @package Uncorked
  */
 ?>
-
 			</div><!-- #main -->
 
 			<?php tha_footer_before(); ?>
 			<footer id="colophon" class="site-footer row-fluid" role="contentinfo">
-			<?php tha_footer_top(); ?>
-				<nav id="footer-nav">
-				  <?php wp_nav_menu( array('theme_location' => 'footer', 'container' => false, 'items_wrap' => '<ul id="%1$s" style class="inline lead %2$s">%3$s</ul>') ); ?>
-				</nav>
-				<?php get_sidebar( 'footer' ); ?>
+			<?php 
+				tha_footer_top();
+				wp_nav_menu( array(
+					'theme_location'  => 'footer',
+					'container'       => 'nav',
+					'container_id'    => 'footer-nav',
+					'container_class' => 'menu',
+					'menu_class'      => 'menu',
+					'fallback_cb'     => 'wp_page_menu',
+					'depth'           => -1 ) ); 
+				get_sidebar( 'footer' ); ?>
 				<div class="site-info" style="text-align: center;">
 					<?php do_action( 'uncorked_credits' ); ?>
-					<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'uncorked' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'uncorked' ), 'WordPress' ); ?></a>
+					<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'uncorked' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'uncorked' ), '<i class="icon-wordpress"></i><span class="hidden">Wordpress</span>' ); ?></a>
 					<span class="sep"> | </span>
-					<?php printf( __( 'Theme: %1$s by %2$s.', 'uncorked' ), 'Uncorked', '<a href="http://crockett.co" rel="designer">Steve Crockett</a>' ); ?>
+					<?php printf( __( 'Design by %2$s.', 'uncorked' ), 'Uncorked', '<a href="http://crockett.co" rel="designer">Steve Crockett</a>' ); ?>
 				</div><!-- .site-info -->
 				<?php tha_footer_bottom(); ?>
 			</footer><!-- #colophon -->
@@ -30,15 +35,5 @@
 		<?php tha_body_bottom(); ?>
 		<?php wp_footer(); ?>
 
-		<?php if(is_front_page()) { ?>
-		<script>
-			var $ = jQuery.noConflict();
-			$(document).ready(function() {
-				$('.carousel').carousel('cycle',{
-		 			interval: 2000,
-			 	});
-			});
-		</script>
-		<?php } ?>
 	</body>
 </html>
