@@ -41,11 +41,11 @@ function uncorked_content_nav( $nav_id ) {
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'uncorked' ) ); ?></div>
+		<div class="nav-previous pager"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'uncorked' ) ); ?></div>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'uncorked' ) ); ?></div>
+		<div class="nav-next pager"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'uncorked' ) ); ?></div>
 		<?php endif; ?>
 
 	<?php endif; ?>

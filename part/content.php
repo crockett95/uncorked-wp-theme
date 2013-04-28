@@ -62,3 +62,5 @@
 	<?php tha_entry_bottom(); ?>
 </article><!-- #post-## -->
 <?php tha_entry_after(); ?>
+
+<hr />

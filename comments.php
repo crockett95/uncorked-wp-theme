@@ -41,7 +41,7 @@
 
 <aside class="row-fluid">
 <?php tha_comments_before(); ?>
-<div id="comments" class="comments-area well well-small span11">
+<div id="comments" class="comments-area well well-small span10 offset1">
 
 	<?php // You can start editing here -- including this comment! ?>
 

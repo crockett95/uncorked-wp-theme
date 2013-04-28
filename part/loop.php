@@ -7,11 +7,11 @@
 			endif;
 			
 			// Set post format
-			$post_format = is_single() ? 'single' : is_page() ? 'page' : is_search() ? 'search' : get_post_format();
+			$postFormat = ( is_single() ? 'single' : ( is_page() ? 'page' : ( is_search() ? 'search' : get_post_format() ) ) );
 			
 			// Get post content
 			while ( have_posts() ) : the_post();
-				get_template_part( 'part/content', $post_format );
+				get_template_part( 'part/content', $postFormat );
 			endwhile;
 			
 			// Get comments for single & page
