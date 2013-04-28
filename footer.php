@@ -34,6 +34,11 @@
 		</div><!-- #page -->
 		<?php tha_body_bottom(); ?>
 		<?php wp_footer(); ?>
-
+		<script>
+			var $ = jQuery.noConflict();
+			$(document).ready(function() {
+				$('input[type="submit"]').addClass('btn btn-primary')
+			});
+		</script>
 	</body>
 </html>
