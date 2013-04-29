@@ -190,12 +190,12 @@ function uncorked_scripts() {
 	        'Uncorked-styles',
 	        get_bloginfo( 'stylesheet_directory' ) . '/css/style.css',
 	        false,
-	        1.0.0
+	        1.0
 	    );
 	    wp_enqueue_style( 'Uncorked-styles' );
 	}
 	
-	wp_enqueue_script( 'Uncorked-scripts', get_template_directory_uri() . '/js/uncorked-ck.js', array( 'jQuery' ), '1.0.0', true );
+	wp_enqueue_script( 'Uncorked-scripts', get_template_directory_uri() . '/js/uncorked-ck.js', array( 'jQuery' ), '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
