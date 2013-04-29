@@ -30,9 +30,9 @@
 	<body <?php body_class(); ?>>
 	<?php tha_body_top(); ?>
 		<div id="page" class="hfeed site">
-			<nav class="navbar navbar-fixed-top">
+			<div class="navbar navbar-fixed-top">
 			<?php get_template_part( 'part/navbar' , 'fixedtop' ); ?>
-			</nav>
+			</div>
 			<?php 
 				tha_header_before(); 
 				do_action( 'before' ); 
