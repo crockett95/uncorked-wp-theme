@@ -27,7 +27,7 @@
 				<?php do_action( 'uncorked_credits' ); ?>
 				<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'uncorked' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'uncorked' ), '<i class="icon-wordpress"></i><span class="hidden">Wordpress</span>' ); ?></a>
 				<span class="sep"> | </span>
-				<?php printf( __( 'Design by %2$s.', 'uncorked' ), 'Uncorked', '<a href="http://crockett.co" rel="designer">Steve Crockett</a>' ); ?>
+				<?php printf( __( 'Design by %2$s.', 'uncorked' ), 'Uncorked', '<a href="http://crockett.co" rel="designer">Steve Crockett</a> <span rel="copyright">&copy; 2013</span>' ); ?>
 			</div><!-- .site-info -->
 			<?php tha_footer_bottom(); ?>
 		</footer><!-- #colophon -->

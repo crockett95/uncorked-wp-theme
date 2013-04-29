@@ -20,13 +20,13 @@
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'uncorked' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-meta">
+	<footer class="entry-meta well well-small">
 		<?php
 			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'uncorked' ) );
+			$category_list = get_the_category_list( __( ' ', 'uncorked' ) );
 
 			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', 'uncorked' ) );
+			$tag_list = get_the_tag_list( '', __( ' ', 'uncorked' ) );
 
 			if ( ! uncorked_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
@@ -55,8 +55,8 @@
 			);
 		?>
 
-		<?php edit_post_link( __( 'Edit', 'uncorked' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
+		<?php edit_post_link( __( 'Edit', 'uncorked' ), '<span class="edit-link label label-important">', '</span>' ); ?>
 	
 	<?php tha_entry_bottom(); ?>
 </article><!-- #post-## -->	

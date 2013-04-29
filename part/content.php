@@ -28,11 +28,11 @@
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
-	<footer class="entry-meta">
+	<footer class="entry-meta well well-small">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'uncorked' ) );
+				$categories_list = get_the_category_list( __( ' ', 'uncorked' ) );
 				if ( $categories_list && uncorked_categorized_blog() ) :
 			?>
 			<span class="cat-links">
@@ -42,7 +42,7 @@
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'uncorked' ) );
+				$tags_list = get_the_tag_list( '', __( ' ', 'uncorked' ) );
 				if ( $tags_list ) :
 			?>
 			<span class="sep"> | </span>
