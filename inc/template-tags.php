@@ -7,6 +7,7 @@
  * @package Uncorked
  */
 
+
 if ( ! function_exists( 'uncorked_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
@@ -32,28 +33,31 @@ function uncorked_content_nav( $nav_id ) {
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'uncorked' ); ?></h1>
-
+		<ul class="pager">
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'uncorked' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'uncorked' ) . '</span>' ); ?>
+		<?php previous_post_link( '<li class="nav-previous">%link</li>', '<span class="meta-nav icon-chevron-left"></span> %title' ); ?>
+		<?php next_post_link( '<li class="nav-next">%link</li>', '%title <span class="meta-nav icon-chevron-right"></span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous pager"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'uncorked' ) ); ?></div>
+		<li class="nav-previous pager"><?php next_posts_link( __( '<span class="meta-nav icon-chevron-left"></span> Older posts', 'uncorked' ) ); ?></li>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next pager"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'uncorked' ) ); ?></div>
+		<li class="nav-next pager"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav icon-chevron-right"></span>', 'uncorked' ) ); ?></li>
 		<?php endif; ?>
 
 	<?php endif; ?>
-
+		
+		</ul>
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
 }
 endif; // uncorked_content_nav
+
+
 
 if ( ! function_exists( 'uncorked_comment' ) ) :
 /**
@@ -75,15 +79,12 @@ function uncorked_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<footer>
+			<footer class="thumbnail">
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 40 ); ?>
 					<?php printf( __( '%s <span class="says">says:</span>', 'uncorked' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author .vcard -->
-				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', 'uncorked' ); ?></em>
-					<br />
-				<?php endif; ?>
+
 
 				<div class="comment-meta commentmetadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_time( 'c' ); ?>">
@@ -92,10 +93,18 @@ function uncorked_comment( $comment, $args, $depth ) {
 					<?php edit_comment_link( __( 'Edit', 'uncorked' ), '<span class="edit-link">', '<span>' ); ?>
 				</div><!-- .comment-meta .commentmetadata -->
 			</footer>
+			
+				<?php if ( $comment->comment_approved == '0' ) : ?>
+					<br />
+					<div class="alert alert-info mod-alert">
+					<button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+					<?php _e( '<i class="icon-info-sign icon-large"></i> Your comment is awaiting moderation.', 'uncorked' ); ?>
+					</div>
+				<?php endif; ?>
 
 			<div class="comment-content"><?php comment_text(); ?></div>
 
-			<div class="reply">
+			<div class="reply label">
 				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</div><!-- .reply -->
 		</article><!-- #comment-## -->
@@ -122,6 +131,7 @@ function uncorked_posted_on() {
 	);
 }
 endif;
+
 /**
  * Returns true if a blog has more than 1 category
  */

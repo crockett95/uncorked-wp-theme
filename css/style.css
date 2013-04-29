@@ -1252,6 +1252,9 @@ html{font-size:62.5%;}
 footer nav ul li a:hover{background:#2b2b2b;text-decoration:none;color:#999999;}
 @media (max-width:767px){footer nav{margin-left:0;}footer nav ul li{width:100%;}footer nav ul li a{display:block;width:auto;}}.format-aside .entry-title{display:none;}
 embed,iframe,object{max-width:100%;}
+.nav-previous{float:left;}
+.nav-next{float:right;}
+.comment-author img{float:left;}
 .comment-content a{word-wrap:break-word;}
 #commentform input,#commentform textarea,#commentform select,#commentform .help-inline,#commentform .uneditable-input,#commentform .input-prepend,#commentform .input-append{display:inline-block;*display:inline;*zoom:1;margin-bottom:0;vertical-align:middle;}
 #commentform .hide{display:none;}
@@ -1265,5 +1268,7 @@ embed,iframe,object{max-width:100%;}
 #commentform input+.help-block,#commentform select+.help-block,#commentform textarea+.help-block,#commentform .uneditable-input+.help-block,#commentform .input-prepend+.help-block,#commentform .input-append+.help-block{margin-top:1rem;}
 #commentform .form-actions{padding-left:180px;}
 #comments{margin-top:30px;}
+.comment-list{list-style-type:none;}
+.label a,.badge a{color:#ffffff;text-decoration:none;cursor:pointer;}.label a:hover,.badge a:hover,.label a:focus,.badge a:focus{color:#ffffff;text-decoration:none;cursor:pointer;}
 .infinite-scroll .navigation-paging,.infinite-scroll.neverending .site-footer{display:none;}
 .infinity-end.neverending .site-footer{display:block;}

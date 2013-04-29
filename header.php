@@ -30,8 +30,10 @@
 	<body <?php body_class(); ?>>
 	<?php tha_body_top(); ?>
 		<div id="page" class="hfeed site">
-			<?php
-				get_template_part( 'part/navbar' , 'fixedtop' );
+			<nav class="navbar navbar-fixed-top">
+			<?php get_template_part( 'part/navbar' , 'fixedtop' ); ?>
+			</nav>
+			<?php 
 				tha_header_before(); 
 				do_action( 'before' ); 
 				if ( !is_front_page() ) { get_template_part( 'part/header' , 'masthead' ); }

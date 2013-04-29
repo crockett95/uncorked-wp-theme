@@ -14,7 +14,7 @@ get_header();
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<header class="entry-header">
+				<header class="entry-header page-header">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 
 					<div class="entry-meta">
@@ -35,8 +35,8 @@ get_header();
 					</div><!-- .entry-meta -->
 
 					<nav role="navigation" id="image-navigation" class="navigation-image">
-						<div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'uncorked' ) ); ?></div>
-						<div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'uncorked' ) ); ?></div>
+						<div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav icon-chevron-left"></span> Previous', 'uncorked' ) ); ?></div>
+						<div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav icon-chevron-right"></span>', 'uncorked' ) ); ?></div>
 					</nav><!-- #image-navigation -->
 				</header><!-- .entry-header -->
 

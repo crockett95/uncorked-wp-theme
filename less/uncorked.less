@@ -271,24 +271,20 @@ object {
 /* =Navigation
 ----------------------------------------------- */
 
-/*.site-content [class*="navigation"] {
-	margin: 0 0 1.5em;
-	overflow: hidden;
+
+.nav-previous {
+	.pull-left;
 }
-[class*="navigation"] .nav-previous {
-	float: left;
-	text-align: left;
-	width: 50%;
+.nav-next {
+	.pull-right;
 }
-[class*="navigation"] .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}*/
 
 /* =Comments
 ----------------------------------------------- */
 
+.comment-author img{
+	.pull-left
+}
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -300,10 +296,29 @@ object {
 #comments	{
 	margin-top: 30px;
 }
+.comment-list {
+	list-style-type: none;
+}
 
 /* =Widgets
 ----------------------------------------------- */
 
+
+/* =Misc
+----------------------------------------------- */
+
+.label a,
+.badge a {
+    color: @white;
+    text-decoration: none;
+    cursor: pointer;
+	&:hover,
+	&:focus,{
+		color: @white;
+		text-decoration: none;
+		cursor: pointer;
+	}
+}
 
 
 /* =Infinite Scroll

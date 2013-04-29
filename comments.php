@@ -17,7 +17,7 @@
 	'title_reply_to' => __( 'Leave a Reply to %s' ),
 	'cancel_reply_link' => __( 'Cancel Reply' ),
 	'label_submit' => __( 'Post Comment' ),
-	'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" name="comment" style="width:98%;" rows="8" aria-required="true"></textarea></p>',
+	'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" name="comment" style="width:96%;" rows="8" aria-required="true"></textarea></p>',
 	'must_log_in' => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
 	'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
 	'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</p>',
@@ -41,7 +41,7 @@
 
 <aside class="row-fluid">
 <?php tha_comments_before(); ?>
-<div id="comments" class="comments-area well well-small span10 offset1">
+<div id="comments" class="comments-area well well-large span12">
 
 	<?php // You can start editing here -- including this comment! ?>
 
@@ -56,8 +56,8 @@
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="navigation-comment" role="navigation">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'uncorked' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'uncorked' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'uncorked' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( '<i class="icon-chevron-left"></i> Older Comments', 'uncorked' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <i class="icon-chevron-right"></i>', 'uncorked' ) ); ?></div>
 		</nav><!-- #comment-nav-before -->
 		<?php endif; // check for comment navigation ?>
 
@@ -76,10 +76,11 @@
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation-comment" role="navigation">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'uncorked' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'uncorked' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'uncorked' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( '<i class="icon-chevron-left"></i> Older Comments', 'uncorked' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <i class="icon-chevron-right"></i>', 'uncorked' ) ); ?></div>
 		</nav><!-- #comment-nav-below -->
 		<?php endif; // check for comment navigation ?>
+		<hr />
 
 	<?php endif; // have_comments() ?>
 
@@ -89,6 +90,7 @@
 	?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'uncorked' ); ?></p>
 	<?php endif; ?>
+	
 
 	<?php comment_form( $commentArgs ); ?>
 

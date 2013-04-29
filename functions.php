@@ -9,7 +9,6 @@
  * Load Jetpack compatibility file.
  */
 require( get_template_directory() . '/inc/jetpack.php' );
-require( get_template_directory() . '/inc/tha_theme_hooks.php');
 
 if ( ! function_exists( 'uncorked_setup' ) ) :
 /**
@@ -21,6 +20,7 @@ if ( ! function_exists( 'uncorked_setup' ) ) :
  */
 function uncorked_setup() {
 
+	require( get_template_directory() . '/inc/tha_theme_hooks.php');
 	/**
 	 * Custom template tags for this theme.
 	 */
@@ -35,6 +35,11 @@ function uncorked_setup() {
 	 * Customizer additions
 	 */
 	require( get_template_directory() . '/inc/customizer.php' );
+
+	/**
+	 * Custom Nav Menu handler for the Navbar.
+	 */
+	require_once( get_template_directory() . '/inc/nav-menu-walker.php' );
 
 	/**
 	 * Make theme available for translation
