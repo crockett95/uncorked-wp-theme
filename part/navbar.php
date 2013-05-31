@@ -24,6 +24,21 @@
 				'container' => false, 
 				'walker'			=>	new The_Bootstrap_Nav_Walker,
 				) ); ?>
+				<ul class="nav pull-right">
+				<li class="dropdown">
+				    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				      <i class="icon-thumbs-up icon-large"></i><i class="icon-caret-down icon-large"></i>
+				    </a>
+						<?php wp_nav_menu( array(
+							'theme_location' => 'follow', 
+							'menu_class' => '', 
+							'depth' => 1, 
+							'fallback_cb' => false, 
+							'container' => false, 
+							'menu_class' => 'dropdown-menu',
+						) ); ?>
+				  </li>
+				</ul>
 		</div>
 	</div><!-- .container-fluid -->
 </div><!-- .navbar-inner -->

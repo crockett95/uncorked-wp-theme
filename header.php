@@ -16,6 +16,8 @@
 	<head>
 		<?php tha_head_top(); ?>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
+		<script type="text/javascript" src="//use.typekit.net/fcm6dah.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width" />
 		<title><?php is_front_page() ? bloginfo('description') : wp_title(''); ?><?php _e( ' | ', 'uncorked' ); ?><?php bloginfo( 'name' ); ?></title>
@@ -30,9 +32,9 @@
 	<body <?php body_class(); ?>>
 	<?php tha_body_top(); ?>
 		<div id="page" class="hfeed site">
-			<div class="navbar navbar-fixed-top">
-			<?php get_template_part( 'part/navbar' , 'fixedtop' ); ?>
-			</div>
+			<nav class="navbar navbar-fixed-top navbar-inverse">
+			<?php get_template_part( 'part/navbar' ); ?>
+			</nav>
 			<?php 
 				tha_header_before(); 
 				do_action( 'before' ); 

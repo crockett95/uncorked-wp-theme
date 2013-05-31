@@ -3,12 +3,14 @@
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		<li data-target="#myCarousel" data-slide-to="1" class=""></li>
 		<li data-target="#myCarousel" data-slide-to="2" class=""></li>
+		<li data-target="#myCarousel" data-slide-to="3" class=""></li>
+		<li data-target="#myCarousel" data-slide-to="4" class=""></li>
 	</ol>
 	<div class="carousel-inner"  style="width: 100%">
 	<?php
 		$carouselArgs = array(
 			'tag' => 'featured',
-			'posts_per_page' => '3'                
+			'posts_per_page' => '5'                
 		);
 		$carouselCounter = 0;
 		// The Query

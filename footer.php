@@ -19,7 +19,7 @@
 				'container'       => 'nav',
 				'container_id'    => 'footer-nav',
 				'fallback_cb'	  => false,
-				'container_class' => 'menu',
+				'container_class' => 'menu hidden-desktop',
 				'menu_class'      => '',
 				'depth'           => 1 ) ); 
 			get_sidebar( 'footer' ); ?>
