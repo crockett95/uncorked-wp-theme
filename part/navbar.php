@@ -18,11 +18,8 @@
 		<div class="nav-collapse">
 			<?php wp_nav_menu( array(
 				'theme_location' => 'primary', 
-				'menu_class' => 'nav', 
 				'depth' => 3, 
-				'fallback_cb' => false, 
 				'container' => false, 
-				'walker'			=>	new The_Bootstrap_Nav_Walker,
 				) ); ?>
 		</div>
 	</div><!-- .container-fluid -->

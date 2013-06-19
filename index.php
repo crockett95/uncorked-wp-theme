@@ -13,9 +13,9 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area row-fluid">
+<main>
 	<?php tha_content_before(); ?>
-	<section id="content" class="site-content offset1 span8" role="main">
+	<section>
 		<?php 
 			if ( is_404() ) :
 				get_template_part( 'part/content' , '404' );
@@ -27,6 +27,6 @@ get_header(); ?>
 	<?php tha_content_after(); ?>
 	
 	<?php get_sidebar(); ?>
-</div><!-- #primary -->
+</main><!-- #primary -->
 	
 <?php get_footer(); ?>

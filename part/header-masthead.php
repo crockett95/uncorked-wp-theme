@@ -7,15 +7,13 @@
 
  ?>
 
-<header id="masthead" class="site-header" role="banner">
+	<hgroup>
 	<?php tha_header_top(); ?>
-	<hgroup class="hero-unit">
-		<h1 class="site-title">
+		<h1>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<?php bloginfo( 'name' ); ?>
 			</a>
 		</h1>
-		<p class="site-description"><?php is_front_page() ? bloginfo('description') : wp_title(''); ?></p>
-	</hgroup>
+		<h2><small><?php is_front_page() ? bloginfo('description') : wp_title(''); ?></small></p>
 	<?php tha_header_bottom(); ?>
-</header><!-- #masthead -->
+	</hgroup>

@@ -29,14 +29,16 @@
 
 	<body <?php body_class(); ?>>
 	<?php tha_body_top(); ?>
-		<div id="page" class="hfeed site">
-			<div class="navbar navbar-fixed-top">
-			<?php get_template_part( 'part/navbar' , 'fixedtop' ); ?>
-			</div>
+	    <header>
 			<?php 
 				tha_header_before(); 
 				do_action( 'before' ); 
-				if ( !is_front_page() ) { get_template_part( 'part/header' , 'masthead' ); }
+				get_template_part( 'part/header' , 'masthead' );
 				tha_header_after(); 
-			?>
-			<div id="main" class="site-main container-fluid">
+				wp_nav_menu( array(
+    				'theme_location' => 'primary', 
+    				'depth'          => 3, 
+    				'container'      => 'nav', 
+    				'items_wrap'     => '%3$s',
+				) ); ?>
+		</header> 
