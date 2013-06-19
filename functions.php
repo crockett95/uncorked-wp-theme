@@ -4,6 +4,8 @@
  *
  * @package Uncorked
  */
+// ini_set('display_errors', 'On');
+// error_reporting(E_ALL);
 
 /*
  * Load Jetpack compatibility file.
@@ -18,6 +20,7 @@ if ( ! function_exists( 'uncorked_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
+
 function uncorked_setup() {
 
 	require( get_template_directory() . '/inc/tha_theme_hooks.php');
@@ -91,7 +94,7 @@ add_action( 'after_setup_theme', 'uncorked_setup' );
  */
 function uncorked_register_custom_background() {
 	$args = array(
-		'default-color' => 'ffffff',
+		'default-color' => '2A333C',
 		'default-image' => '',
 	);
 
@@ -183,7 +186,10 @@ add_action( 'widgets_init', 'uncorked_widgets_init' );
  * Enqueue scripts and styles
  */
 function uncorked_scripts() {
-	wp_enqueue_style( 'Uncorked-style', get_stylesheet_uri() );
+	
+	if ( is_admin() ) {
+	    wp_enqueue_style( 'Uncorked-style', get_stylesheet_uri() );
+    }
 	
 	if ( !is_admin() ) { 
 	    wp_register_style(
@@ -209,13 +215,6 @@ function uncorked_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'uncorked_scripts' );
 
-
-add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
-
-function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
-    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
-    return $html;
-}
 
 add_filter('widget_text', 'do_shortcode');
 
