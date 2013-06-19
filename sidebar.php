@@ -7,7 +7,7 @@
 ?>
 
 <?php tha_sidebars_before(); ?>
-<section id="secondary" class="widget-area span3 hidden-phone" role="complementary">
+<section id="secondary" class="widget-area span3" role="complementary">
 	<?php tha_sidebar_top(); ?>
 	<?php do_action( 'before_sidebar' ); ?>
 	<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>

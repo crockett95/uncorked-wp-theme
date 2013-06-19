@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'amienneregular';
+  src: url('../fonts/Amienne/amienne-regular-webfont.eot');
+  src: url('../fonts/Amienne/amienne-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Amienne/amienne-regular-webfont.woff') format('woff'), url('../fonts/Amienne/amienne-regular-webfont.ttf') format('truetype'), url('../fonts/Amienne/amienne-regular-webfont.svg#amienneregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AvenirNextCondensedBold';
+  src: url('../fonts/avenir_next_condensed/avenir_next_condensed.eot');
+  src: url('../fonts/avenir_next_condensed/avenir_next_condensed.eot?#iefix') format('embedded-opentype'), url('../fonts/avenir_next_condensed/avenir_next_condensed.woff') format('woff'), url('../fonts/avenir_next_condensed/avenir_next_condensed.ttf') format('truetype'), url('../fonts/avenir_next_condensed/avenir_next_condensed.svg#AvenirNextCondensedBold') format('svg');
+}

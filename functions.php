@@ -121,30 +121,6 @@ function uncorked_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Front Page 1', 'uncorked' ),
-		'id'            => 'front1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Front Page 2', 'uncorked' ),
-		'id'            => 'front2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Front Page 3', 'uncorked' ),
-		'id'            => 'front3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'uncorked' ),
 		'id'            => 'foot1',
 		'before_widget' => '<aside id="%1$s" class="widget well-small %2$s">',
@@ -195,7 +171,7 @@ function uncorked_scripts() {
 	    wp_enqueue_style( 'Uncorked-styles' );
 	}
 	
-	wp_enqueue_script( 'Uncorked-scripts', get_template_directory_uri() . '/js/uncorked-ck.js', array( 'jQuery' ), '1.0', true );
+	wp_enqueue_script( 'Uncorked-scripts', get_template_directory_uri() . '/js/uncorked-ck.js', array( 'jquery' ), '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
