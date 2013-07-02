@@ -1,32 +1,43 @@
 <?php
 /**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package Uncorked
+ * Uncorked Index - The main controller for the Uncorked Theme
+ * 
+ * This is the default file called by Wordpress for the display of
+ * pages, posts, and other views. This file has been concern-separated
+ * from nearly all view code, which is accessible in the `./views`
+ * directory.
+ * 
+ * @package     Uncorked
+ * @author      Steve Crockett
+ * @category    Controller
+ * @copyright   2013-2013 Steve Crockett
+ * @license     GNU General Public License, version 2
+ * @version     1.0.0
+ * 
+ * @since       1.0.0
  */
 
-get_header(); ?>
+// Insert Header View
+get_template_part('views/header'); 
 
-<main>
-	<?php tha_content_before(); ?>
-	<section>
-		<?php 
-			if ( is_404() ) :
-				get_template_part( 'part/content' , '404' );
-			else:
-				get_template_part( 'part/loop' );
-			endif;
-		?>
-	</section><!-- #content -->
-	<?php tha_content_after(); ?>
-	
-	<?php get_sidebar(); ?>
-</main><!-- #primary -->
-	
-<?php get_footer(); ?>
+     tha_content_before();
+     echo '<main id="content">'; 
+     
+     // Call The Loop
+     if ( is_404() ) :
+         get_template_part( 'views/content' , '404' );
+     else:
+         get_template_part( 'loop' );
+     endif;
+     
+     echo '</main><!-- #content -->';
+     tha_content_after();
+     
+     // Add a sidebar
+     get_template_part('views/sidebar'); 
+
+// Insert Footer View
+get_template_part('views/footer'); 
+
+/*  End of File */
+/*  Location {uncorked root directory}/ */

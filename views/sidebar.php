@@ -7,32 +7,32 @@
 ?>
 
 <?php tha_sidebars_before(); ?>
-<section>
+<aside>
 	<?php tha_sidebar_top(); ?>
 	<?php do_action( 'before_sidebar' ); ?>
 	<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
-		<aside>
+		<article>
 			<?php get_search_form(); ?>
-		</aside>
+		</article>
 
-		<aside>
+		<article>
 			<h1><?php _e( 'Archives', 'uncorked' ); ?></h1>
 			<ul>
 				<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 			</ul>
-		</aside>
+		</article>
 
-		<aside>
+		<article>
 			<h1><?php _e( 'Meta', 'uncorked' ); ?></h1>
 			<ul>
 				<?php wp_register(); ?>
 				<li><?php wp_loginout(); ?></li>
 				<?php wp_meta(); ?>
 			</ul>
-		</aside>
+		</article>
 
 	<?php endif; // end sidebar widget area ?>
 	<?php tha_sidebar_bottom(); ?>	
-</section><!-- #secondary -->
+</aside><!-- #secondary -->
 <?php tha_sidebars_after(); ?>

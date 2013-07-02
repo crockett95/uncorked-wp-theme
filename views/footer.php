@@ -7,9 +7,8 @@
  * @package Uncorked
  */
 ?>
-			</div><!-- #main -->
-		</div><!-- #page -->
-
+    
+        </section><!-- #body -->
 		<?php tha_footer_before(); ?>
 		<footer>
 		<?php 
@@ -23,7 +22,7 @@
 			<div>
 				<?php do_action( 'uncorked_credits' ); ?>
 				<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'uncorked' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'uncorked' ), '<span>Wordpress</span>' ); ?></a>
-				<span> | </span>
+				<span class="separator"> | </span>
 				<?php printf( __( 'Design by %2$s.', 'uncorked' ), 'Uncorked', '<a href="http://crockett.co" rel="designer">Steve Crockett</a>' ); ?>
 			</div><!-- .site-info -->
 			<?php tha_footer_bottom(); ?>

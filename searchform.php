@@ -1,8 +1,10 @@
 <?php
 /**
- * The template for displaying search forms in Uncorked
+ * The template for displaying search forms
  *
- * @package Uncorked
+ * @package     Uncorked
+ * @category    View
+ * @since       1.0.0
  */
 ?>
 <form method="get" id="searchform" class="searchform form-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
