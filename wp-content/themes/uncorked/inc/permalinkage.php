@@ -31,7 +31,7 @@ function uncorked_permalink_data() {
 }
 
 // Calls to the function or to delete the file
-if (!file_exists(get_template_directory() . '/js/permalinks.js')) {
+if (!file_exists(get_template_directory() . '/js/permalinks.js') && $wp_rewrite->using_permalinks() && $wp_rewrite->permalink_structure !== '') {
   uncorked_permalink_data();
 }
 if( !$wp_rewrite->using_permalinks() || $wp_rewrite->permalink_structure === '' ) {

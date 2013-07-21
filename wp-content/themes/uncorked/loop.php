@@ -39,7 +39,7 @@ else:
 		// Get comments for single & page
 		if ( is_single() || is_page() ) :
 			if ( comments_open() || '0' != get_comments_number() ) :
-				comments_template();
+				get_template_part('views/' . UC_RETURN_FORMAT . '/comments');
 			endif;
 		endif;
 		

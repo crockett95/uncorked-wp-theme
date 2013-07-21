@@ -9,6 +9,8 @@
  *
  * @package Uncorked
  */
+
+global $user_identity, $aria_req, $req, $required_text, $commenter;
 	
 	$commentArgs = array(
 	'id_form' => 'commentform',
