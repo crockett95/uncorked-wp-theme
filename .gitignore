@@ -16,3 +16,4 @@ node_modules
 
 .tm_properties
 permalinks.js
+codekit-config.*
