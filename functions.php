@@ -5,6 +5,10 @@
  * @package Uncorked
  */
 
+
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+
 /*
  * Load Jetpack compatibility file.
  */
@@ -40,6 +44,10 @@ function uncorked_setup() {
 	 * Custom Nav Menu handler for the Navbar.
 	 */
 	require_once( get_template_directory() . '/inc/nav-menu-walker.php' );
+  
+  
+  // Generates permalinks JS data
+  require_once( get_template_directory() . '/inc/permalinkage.php');
 
 	/**
 	 * Make theme available for translation
@@ -119,30 +127,6 @@ function uncorked_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Front Page 1', 'uncorked' ),
-		'id'            => 'front1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Front Page 2', 'uncorked' ),
-		'id'            => 'front2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Front Page 3', 'uncorked' ),
-		'id'            => 'front3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'uncorked' ),

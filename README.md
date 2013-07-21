@@ -1,6 +1,7 @@
 # Uncorked WP Theme
 
-Version: 1.0.0
+Version: 2.0.0a
+[![Build Status](https://travis-ci.org/crockett95/uncorked-wp-theme.png)](https://travis-ci.org/crockett95/uncorked-wp-theme)
 
 Released: April 29, 2013
 Tested with: 3.5.1

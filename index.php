@@ -17,27 +17,41 @@
  * @since       1.0.0
  */
 
-// Insert Header View
-get_template_part('views/header'); 
+//  Check the requested format and set to a constant
+if ($_GET['format'] === 'json') {
+  define('UC_RETURN_FORMAT', 'json');
+  // Call the JSON Controller
+} elseif ($_GET['format'] === 'xml') {
+  define('UC_RETURN_FORMAT', 'xml');
+  // Call to XML Controller
+} else { //Render HTML
+  define('UC_RETURN_FORMAT', 'html');
+}
 
-     tha_content_before();
-     echo '<main id="content">'; 
-     
+
+// Insert Header View
+get_template_part('views/' . UC_RETURN_FORMAT . '/header'); 
+
+    // Add a touch of code for HTML
+    //  I hate having this in my index.php, but I haven't figured out how to get around it.
+    if ( UC_RETURN_FORMAT === 'html' ) {
+      tha_content_before();
+      echo '<main id="content">'; 
+    }
+   
      // Call The Loop
-     if ( is_404() ) :
-         get_template_part( 'views/content' , '404' );
-     else:
-         get_template_part( 'loop' );
-     endif;
-     
-     echo '</main><!-- #content -->';
-     tha_content_after();
-     
+     get_template_part( 'loop' );
+   
      // Add a sidebar
-     get_template_part('views/sidebar'); 
+     if ( UC_RETURN_FORMAT === 'html' ) {
+      tha_content_after();
+       get_template_part('views/' . UC_RETURN_FORMAT . '/sidebar');
+      echo '</main><!-- #content -->';
+     }
 
 // Insert Footer View
-get_template_part('views/footer'); 
+get_template_part('views/' . UC_RETURN_FORMAT . '/footer'); 
+
 
 /*  End of File */
 /*  Location {uncorked root directory}/ */
