@@ -33,7 +33,7 @@
 			<?php 
 				tha_header_before(); 
 				do_action( 'before' ); 
-				get_template_part( 'part/header' , 'masthead' );
+				get_template_part( 'views/' . UC_RETURN_FORMAT . '/header' , 'masthead' );
 				tha_header_after(); 
 				wp_nav_menu( array(
     				'theme_location' => 'primary', 
