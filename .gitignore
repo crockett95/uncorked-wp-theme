@@ -33,16 +33,17 @@ codekit-config.*
 # http://kernel.org/pub/software/scm/git/docs/gitignore.html
  
 # Ignore everything in the root except the "wp-content" directory.
-/wp-*
-xmlrpc.php
-license.txt
+/wordpress/wp-*
+/wordpress/xmlrpc.php
+/wordpress/license.txt
 !.gitignore
-!wp-content/
+!wordpress/wp-content/
+/index.php
  
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
-wp-content/*
-!wp-content/themes/
+/wordpress/wp-content/*
+!wordpress/wp-content/themes/
  
 # Ignore everything in the "plugins" directory, except the plugins you
 # specify (see the commented-out examples for hints on how to do this.)
@@ -52,8 +53,8 @@ wp-content/plugins/*
  
 # Ignore everything in the "themes" directory, except the themes you
 # specify (see the commented-out example for a hint on how to do this.)
-wp-content/themes/*
-!wp-content/themes/uncorked/
+wordpress/wp-content/themes/*
+!wordpress/wp-content/themes/uncorked/
 
-wp-content/themes/uncorked/sidebar.php
-wp-content/themes/uncorked/comments.php
+wordpress/wp-content/themes/uncorked/sidebar.php
+wordpress/wp-content/themes/uncorked/comments.php
