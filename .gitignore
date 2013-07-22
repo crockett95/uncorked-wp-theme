@@ -39,6 +39,8 @@ codekit-config.*
 !.gitignore
 !wordpress/wp-content/
 /index.php
+/wordpress/index.php
+/uncorked
  
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
@@ -58,3 +60,6 @@ wordpress/wp-content/themes/*
 
 wordpress/wp-content/themes/uncorked/sidebar.php
 wordpress/wp-content/themes/uncorked/comments.php
+
+.htaccess
+/wordpress/readme.html

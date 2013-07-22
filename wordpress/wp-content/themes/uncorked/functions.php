@@ -43,7 +43,7 @@ function uncorked_setup() {
 	/**
 	 * Custom Nav Menu handler for the Navbar.
 	 */
-	require_once( get_template_directory() . '/inc/nav-menu-walker.php' );
+	// require_once( get_template_directory() . '/inc/nav-menu-walker.php' );
   
   
   // Generates permalinks JS data
